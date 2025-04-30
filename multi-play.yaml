@@ -6,10 +6,10 @@
     ansible.builtin.debug:
       msg: "hello from play 1 and task 1"
 
-- name: play2 
+- name: play2
   hosts: local
   connection: local
-  tasks: 
-  - name: paly 2 and task 1
-    ansible.builtin.package:
+  tasks:
+  - name: play 2 and task 1
+    ansible.builtin.debug:
       msg: "hello from play 2 and task 1"
