@@ -4,3 +4,9 @@
   - name: filters
     ansible.builtin.debug:
       msg: "hello {{person | default('Ramesh')}}"
+
+  - name: convert string to list 
+    vars:
+      fruits: "apple, banana, grapes"   
+    ansible.builtin.debug:
+      msg: "{{ fruits | split(',') }}"  
