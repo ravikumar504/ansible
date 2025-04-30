@@ -1,6 +1,6 @@
 - name: vars from inventory 
   hosts: web
-  connection: local
+  
   tasks:
   - name: vars from inventory
     ansible.builtin.debug:
