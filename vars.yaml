@@ -7,5 +7,5 @@
     trainer: sivakumar
   tasks:
   - name: print the variable
-    ansible.builtin.package:
-      msg: "course is {{ course }} , duration is {{ duration }}, trainer is {{ trainer }}"
+    ansible.builtin.debug:
+      msg: "course is {{course}} , duration is {{duration}}, trainer is {{trainer}}"
