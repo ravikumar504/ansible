@@ -5,3 +5,6 @@
   - name: vars from args
     ansible.builtin.debug:
       msg: "from {{greet}}"
+
+
+      # ansible-playbook -i inventory.ini vars-args.yaml -e "greet=args"
