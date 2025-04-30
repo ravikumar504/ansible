@@ -1,10 +1,10 @@
-- name: mysql
+- name: expense 
   hosts: web 
   become: yes
   tasks:
   - name: install mysql
     ansible.builtin.package:
-      name: mysql
+      name: mysql-server
       state: installed
   
   - name: start mysql
