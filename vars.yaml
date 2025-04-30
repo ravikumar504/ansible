@@ -9,6 +9,6 @@
   - name: print the variable
   # task level variables (for for this task, out of this task wont applicable & overrides play level variables)
     vars: 
-      course: Ansible    
+      course: Docker  
     ansible.builtin.debug:
       msg: "course is {{course}} , duration is {{duration}}, trainer is {{trainer}}"
