@@ -2,12 +2,13 @@
   hosts: local
   connection: local
   vars:
-    course: "devops with aws"
+    course: "devops with aws"    # play level variables (for whole playbook)
     duration: 120hrs
     trainer: sivakumar
   tasks:
   - name: print the variable
+  # task level variables (for for this task, out of this task wont applicable & overrides play level variables)
     vars: 
-      course: Ansible
+      course: Ansible    
     ansible.builtin.debug:
       msg: "course is {{course}} , duration is {{duration}}, trainer is {{trainer}}"
