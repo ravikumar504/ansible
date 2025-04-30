@@ -3,11 +3,11 @@
   connection: local
   vars_prompt:
   - name: course
-    prompt: enter ur name
+    prompt: enter course name
   - name: duration
     prompt: enter duration
   - name: trainer
-    prompt: enter duration
+    prompt: enter trainer
     
   tasks:
   - name: prompt from variables
