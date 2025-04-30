@@ -9,5 +9,5 @@
     loop:
     - {name: "gcc" , state: "present"}
     - {name: "git" , state: "present"}
-    - {name: "mysql" , state: "absent"}
-    - {name: "zip" , state: "absent"}
+    - {name: "mysql" , state: "present"}
+    - {name: "zip" , state: "present"}
