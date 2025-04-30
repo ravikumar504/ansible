@@ -15,6 +15,7 @@
       IAC: terraform
       orch: k8
 
-- name: print course info
-  ansible.builtin.debug:
-    msg: "course is {{coursename}}, duration is {{duration}}, topics are {{topics}}, is live:{{live}} and tools are:{{tools}}"
+  tasks:
+  - name: print course info
+    ansible.builtin.debug:
+      msg: "course is {{coursename}}, duration is {{duration}}, topics are {{topics}}, is live:{{live}} and tools are:{{tools}}"
