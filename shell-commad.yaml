@@ -1,8 +1,8 @@
 - name: shell & command module
   hosts: web
   tasks:
-  - name: command module
-    ansible.builtin.command: ls -ltr >/tmp/output.txt
+  # - name: command module
+  #   ansible.builtin.command: ls -ltr >/tmp/output.txt
   - name: shell module
     ansible.builtin.shell: ls -ltr >/tmp/output.txt
   - name: command module
