@@ -1,0 +1,11 @@
+- name: loop
+  hosts: web
+  become: yes
+  tasks:
+  - name: loop
+    ansible.builtin.debug:
+      msg: {{item}}
+    loop:
+    - ravikumar
+    - suneel
+    - ravi
