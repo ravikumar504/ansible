@@ -1,10 +1,9 @@
 - name: loop
   hosts: web
-  become: yes
   tasks:
-  - name: loop
+  - name: exec loop
     ansible.builtin.debug:
-      msg: {{ item }}
+      msg: "Hello {{ item }}""
     loop:
     - ravikumar
     - suneel
