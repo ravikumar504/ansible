@@ -1,4 +1,4 @@
-- name: multi play
+- name: play1
   hosts: local
   connection: local
   tasks:
@@ -6,7 +6,7 @@
     ansible.builtin.debug:
       msg: hello from play 1 and task 1
 
-- name: multi play 
+- name: play2 
   hosts: web
   connection: local
   tasks: 
