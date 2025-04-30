@@ -1,0 +1,6 @@
+- name: filters
+  hosts: web
+  tasks: 
+    name: filters
+    ansible.builtin.debug:
+      msg: "hello {{person}}"
