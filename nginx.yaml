@@ -2,6 +2,7 @@
   hosts: web
   become: yes
   tasks:
-  - name: nginx
+  - name: install nginx
     ansible.builtin.package:
-    state: installed
+      name: nginx
+      state: installed
