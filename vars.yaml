@@ -12,3 +12,8 @@
       course: Docker  
     ansible.builtin.debug:
       msg: "course is {{course}} , duration is {{duration}}, trainer is {{trainer}}"
+
+
+  - name: print the variable
+    ansible.builtin.debug:
+      msg: "course is {{course}} , duration is {{duration}}, trainer is {{trainer}}"
