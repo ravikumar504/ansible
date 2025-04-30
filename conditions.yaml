@@ -1,7 +1,8 @@
 - name: conditions
   hosts: local
   connection: local
-  
+  vars:
+    my_number: 1
   tasks:
   - name: print number > 10
     ansible.builtin.debug:
