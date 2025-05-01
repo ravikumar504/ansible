@@ -6,15 +6,68 @@
     ansible.builtin.command:  dnf module disable nodejs -y
 
   - name: enable nodejs 20
-    ansible.builtin.command: dnf module enable nodejs:20 
+    ansible.builtin.command: dnf module enable nodejs:20 -y
 
   - name: install nodejs
     ansible.builtin.package:
-      name: nodejs
+      name: "{{item}}"
       state: present
+    loop:
+      - nodejs
+      - mysql
+
+  - name: install dep
+    ansible.builtin.pip:
+      name: "{{item}}"
+      executable: pip3.9
+    loop:
+      - pymysql
+      - cryptography
 
   - name: start & enable nodejs
     ansible.builtin.service:
       name: nodejs
       state: started
       enabled: yes
+
+  - name: add user 
+    ansible.builtin.user: 
+      name: expense
+
+  - name: create directory 
+    ansible.builtin.file:
+      path: /app
+      state: directory
+
+  - name: download code
+    ansible.builtin.get_url:
+      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+      dest: /tmp/backend.zip
+
+  - name: unzip 
+    ansible.builtin.unarchive:
+    src: /tmp/backend.zip
+    dest: /app
+    remote_src: yes
+
+  - name: copy backend service
+    ansible.builtin.copy:
+      src: backend.service
+      dest: /etc/systemd/system/backend.service
+
+  - name: load the schema
+    community.mysql.mysql_info:
+      state: import
+      name: all
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: 54.172.149.189
+      target: /app/schema/backend.sql
+
+  - name: restart the service file
+    ansible.builtin.systemd_service:
+      name: backend
+      state: restarted
+      daemon_reload: true
+      enabled: true
+
