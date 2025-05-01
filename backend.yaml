@@ -1,0 +1,20 @@
+- name: configure backend
+  hosts: backend
+  become: yes
+  tasks: 
+  - name: disable nodejs
+    ansible.builtin.command:  dnf module disable nodejs -y
+
+  - name: enable nodejs 20
+    ansible.builtin.command: dnf module enable nodejs:20 
+
+  - name: install nodejs
+    ansible.builtin.package:
+      name: nodejs
+      state: present
+
+  - name: start & enable nodejs
+    ansible.builtin.service:
+      name: nodejs
+      state: started
+      enabled: yes
