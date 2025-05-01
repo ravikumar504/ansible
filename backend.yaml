@@ -24,12 +24,6 @@
       - pymysql
       - cryptography
 
-  - name: start & enable nodejs
-    ansible.builtin.service:
-      name: nodejs
-      state: started
-      enabled: yes
-
   - name: add user 
     ansible.builtin.user: 
       name: expense
