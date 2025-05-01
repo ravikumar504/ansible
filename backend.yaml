@@ -50,7 +50,7 @@
       dest: /etc/systemd/system/backend.service
 
   - name: load the schema
-    community.mysql.mysql_info:
+    community.mysql.mysql_db:
       state: import
       name: all
       login_user: root
