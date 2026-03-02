@@ -4,7 +4,7 @@
   vars: # PLAY level variables, global variables
     COURSE: "DevOps with AWS"
     DURATION: 120HRS
-    TRAINER: Sivakumar
+    TRAINER: Ravikumar
   tasks:
   - name: print the variables
     vars: # Task level variables, accessible only with in the task. Task variables can override play level variables. Local variables
